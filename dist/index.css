@@ -1,0 +1,11 @@
+/*!***********************************************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/less-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./index.sass ***!
+  \***********************************************************************************************************************************************/
+.root {
+  width: 100%;
+  background-color: yellow;
+  height: 100px;
+}
+
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguY3NzIiwibWFwcGluZ3MiOiI7OztBQUFBO0VBQ0U7RUFDQTtFQUNBO0FBQ0YiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9pbmRleC5zYXNzIl0sInNvdXJjZXNDb250ZW50IjpbIi5yb290IHtcbiAgd2lkdGg6IDEwMCU7XG4gIGJhY2tncm91bmQtY29sb3I6IHllbGxvdztcbiAgaGVpZ2h0OiAxMDBweDtcbn0iXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=*/

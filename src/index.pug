@@ -1,0 +1,12 @@
+include pug/libs/_libs
+- var ololo = "String <strong>vaariable</strong>"
+doctype html
+html(lang='en')  
+    include pug/_head
+    body
+        .root
+            header.header
+            +image('1')
+        - for (var x=0; x<2;x++)
+            li item
+        p=ololo
