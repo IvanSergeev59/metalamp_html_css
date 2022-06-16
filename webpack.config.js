@@ -73,7 +73,7 @@ const jsLoaders = () => {
 const plugins= () => {
     base = [
         new HTMLWebpackPlugin({
-            template: './index.html', // путь к исходному файлу html
+            template: './index.pug', // путь к исходному файлу html
             minify: { // минификация кода html
                  collapseWhitespace: isProd // Если продакшн сборка, то используем
             }
@@ -102,8 +102,8 @@ module.exports = {
     context: path.resolve(__dirname, 'src'), // исходники приложения если укажем папку то далее не прописываем её в путяхз
     mode: 'development', // режим разработки
     entry: {
-        '/index': '/index.js',
-        '/pages/header/header': '/pages/header/header.js'
+        'index': '/index.js',
+        'pages/header/header': '/pages/header/header.js'
         // main: ['@babel/polyfill', './index.js', ],
         // header: ['@babel/polyfill', './pages/header/header.js']
          // входящие файлы js
@@ -173,6 +173,11 @@ module.exports = {
                   loader: 'babel-loader',
                   options: babelOptions('@babel/preset-react')
                 }
+            },
+            {
+                test: /\.pug$/,
+                loader: 'pug-loader',
+                exclude: /(node_modules|bower_components)/,
             }
         ]
     }
