@@ -1,0 +1,35 @@
+-
+    var accordionItems = [
+        {
+            headingContent: 'Item 1',
+            bodyContent: 'Loren ipsum dolor, sit amet conse ewgewhgwe ewgfewhwe we weyweyhgw'
+        },
+        {
+            headingContent: 'Item 2',
+            bodyContent: 'Loren ipsum dolor, sit amet conse ewgewhgwe ewgfewhwe we weyweyhgw'
+        },
+        {
+            headingContent: 'Item 3',
+            bodyContent: 'Loren ipsum dolor, sit amet conse ewgewhgwe ewgfewhwe we weyweyhgw'
+        },
+    ]
+
+mixin acc(id='accordionExample', accItems=accordionItems)
+    .accodrion(id=`${id}`)
+        each item, index in accItems 
+            .accordion-item 
+                h2.accodrion-header(id=`heading_${id}${index}`)
+                    button.accordion-button.collapsed(
+                        type='button' data-bs-toggle='collapse'
+                        data-bs-target=`$panel_${id}${index}`
+                        aria-expanded='false'
+                        aria-controls=`panel_${id}${index}`)
+                        = item.headingContent
+                .accordion-collapse.collapse(
+                    aria-labelledby=`heading_${id}${index}`
+                    data-bs-parent=`#${id}`
+                    id=`panel_${id}${index}`)
+                    .accordion-body 
+                        = item.bodyContent
+                
+                    

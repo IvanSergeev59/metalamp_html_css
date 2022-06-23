@@ -5,7 +5,9 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserWebpackPlugin = require('terser-webpack-plugin');
-const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer')
+const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer');
+const globule = require("globule");
+const fs = require("fs");
 const isDev = process.env.NODE_ENV === 'development';
 const isProd= !isDev;
 
@@ -73,7 +75,7 @@ const jsLoaders = () => {
 const plugins= () => {
     base = [
         new HTMLWebpackPlugin({
-            template: './index.pug', // путь к исходному файлу html
+            template: './pages/index.pug', // путь к исходному файлу html
             minify: { // минификация кода html
                  collapseWhitespace: isProd // Если продакшн сборка, то используем
             }
@@ -82,7 +84,7 @@ const plugins= () => {
         new CopyWebpackPlugin({ //копирование объектов или папок
             patterns:[ //должны быть обязательно паттерны
                  {
-                     from: path.resolve(__dirname, 'src/favicon.ico'), //откуда копируем
+                     from: path.resolve(__dirname, 'src/images/favicon.ico'), //откуда копируем
                      to: path.resolve(__dirname, 'dist') //куда копируем
                  }
              ],
@@ -97,13 +99,24 @@ const plugins= () => {
      }
      return base
 }
+ // mixins are created in file libs.pug automatically
+const mixins = globule
+    .find(["src/blocks/libs/**/_*.pug", "!src/blocks/libs/_libs.pug"])
+    .map((path) => path.split('/').pop())
+    .reduce((acc, currentItem) => acc + `include ${currentItem}\n`, ``);
+
+fs.writeFile("src/blocks/libs/_libs.pug", mixins, (err) => {
+    if (err) throw err;
+    console.log('Mixins are generated automatically!')
+});
+
 
 module.exports = {
     context: path.resolve(__dirname, 'src'), // исходники приложения если укажем папку то далее не прописываем её в путяхз
     mode: 'development', // режим разработки
     entry: {
-        'index': '/index.js',
-        'pages/header/header': '/pages/header/header.js'
+        'main': '/pages/index.js',
+        'pages/header/header': '/blocks/header/header.js'
         // main: ['@babel/polyfill', './index.js', ],
         // header: ['@babel/polyfill', './pages/header/header.js']
          // входящие файлы js
@@ -122,7 +135,7 @@ module.exports = {
     },
     optimization: optimization(), 
     devServer: { // настройки дев сервера
-        port: 4200,
+        port: 4201,
         hot: isDev
     },
     devtool: isDev ? 'inline-source-map' : false,
