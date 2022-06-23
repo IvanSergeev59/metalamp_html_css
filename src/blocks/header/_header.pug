@@ -1,5 +1,5 @@
 include __menu/_header__menu
-mixin header 
+mixin header(auth)
     header.header 
         img.header__logo.logo-margin(src=require("../images/Logo.png") alt="Logo")
-        +header__menu
+        +header__menu(auth)

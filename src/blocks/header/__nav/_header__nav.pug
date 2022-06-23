@@ -1,3 +1,5 @@
+include ../__buttons/_header__buttons
+include ../__userName/_header__userName
 //- mixin adding img list for menu button
 mixin add_list_item(item)
     div.nav-item
@@ -5,18 +7,22 @@ mixin add_list_item(item)
         div.item-img-container
             img.item-img(src=require("../images/expand_more.png") alt="expand_more")
             
-mixin header__nav
+mixin header__nav(auth)
     ul.header__nav
-                each item, index in nav_arr
-                    if(item.length>1)
-                        if(index==0)
-                            li.nav-active=item 
-                                +add_list_item(item)
-                        else 
-                            li 
-                                +add_list_item(item)
-                    else 
-                        if(index==0)
-                            li.nav-active=item
-                        else
-                            li=item[0]
+        each item, index in nav_arr
+            if(item.length>1)
+                if(index==0)
+                    li.nav-active=item 
+                        +add_list_item(item)
+                else 
+                    li 
+                        +add_list_item(item)
+            else 
+                if(index==0)
+                    li.nav-active=item
+                else
+                    li=item[0]
+        if(!auth) 
+            +header__buttons
+        else 
+            +header__userName
