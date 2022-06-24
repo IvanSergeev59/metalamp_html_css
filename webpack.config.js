@@ -116,7 +116,8 @@ module.exports = {
     mode: 'development', // режим разработки
     entry: {
         'main': '/pages/index.js',
-        'pages/header/header': '/blocks/header/header.js'
+        'pages/header/header': '/blocks/header/header.js',
+        'pages/footer/footer': '/blocks/footer/footer.js'
         // main: ['@babel/polyfill', './index.js', ],
         // header: ['@babel/polyfill', './pages/header/header.js']
          // входящие файлы js
