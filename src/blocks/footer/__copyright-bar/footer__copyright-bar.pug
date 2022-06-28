@@ -1,3 +1,4 @@
-mixin footer__copyright-bar
-    div.footer__copyright-bar
-        h2 footer copyright
+mixin footer__copyright-bar(cls, cls_p)
+    div(class=cls)
+        p(class=cls_p) Copyright © 2018 Toxin отель. Все права защищены.
+        +social-block

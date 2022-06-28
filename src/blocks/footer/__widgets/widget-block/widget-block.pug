@@ -1,9 +1,10 @@
 mixin widget-block(items)
     ul 
         each item in items 
-            if(item==logo)
+            if item=='logo'
                 li
                     +logo("logo widget-block__logo")
+            else if item=='feedback'  
                 li 
                     +email-form 
             else
