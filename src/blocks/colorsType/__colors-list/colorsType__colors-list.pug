@@ -1,0 +1,6 @@
+include ./__item/colors-list__item
+mixin colorsType__colors-list(arr)
+    ul.colorsType__colors-list
+        each item in arr 
+            li
+                +colors-list__item(item)

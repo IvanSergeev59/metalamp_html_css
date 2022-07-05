@@ -1,0 +1,5 @@
+- var colors = [{color: '#1F2041', text: 'Dark Shade 100%', code: '#1F2041'}, {color: 'rgba(31, 32, 65, 0.75)', text: 'Dark Shade 75%', code: '#1F2041'}, {color: 'rgba(31, 32, 65, 0.5)', text: 'Dark Shade 50%', code: '#1F2041'}, {color: 'rgba(31, 32, 65, 0.25)', text: 'Dark Shade 25%', code: '#1F2041'}, {color: 'rgba(31, 32, 65, 0.05)', text: 'Dark Shade 5%', code: '#1F2041'}, {color: '#BC9CFF', text: 'Purple', code: '#BC9CFF'}, {color: '#6FCF97', text: 'Green', code: '#6FCF97'}]
+include __colors-list/colorsType__colors-list
+block colorsType-container
+    div.colorsType-container
+        +colorsType__colors-list(colors)
