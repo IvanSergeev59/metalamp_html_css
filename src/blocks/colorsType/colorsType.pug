@@ -1,5 +1,8 @@
 - var colors = [{color: '#1F2041', text: 'Dark Shade 100%', code: '#1F2041'}, {color: 'rgba(31, 32, 65, 0.75)', text: 'Dark Shade 75%', code: '#1F2041'}, {color: 'rgba(31, 32, 65, 0.5)', text: 'Dark Shade 50%', code: '#1F2041'}, {color: 'rgba(31, 32, 65, 0.25)', text: 'Dark Shade 25%', code: '#1F2041'}, {color: 'rgba(31, 32, 65, 0.05)', text: 'Dark Shade 5%', code: '#1F2041'}, {color: '#BC9CFF', text: 'Purple', code: '#BC9CFF'}, {color: '#6FCF97', text: 'Green', code: '#6FCF97'}]
+- var types= [{type: 'H1', typeSize: 'font-size: 24px; line-height: 29px;', text: 'This one is the sub-section or widget title', typeStyle: 'font-weight: 700; font-size: 24px;line-height: 29px; color: #1F2041'}, {type: 'H2', typeSize: 'font-size: 19px; line-height: 23px;', text: 'Next one is the item title inside widgets', typeStyle: 'font-weight: 700; font-size: 19px;line-height: 23px; color: #1F2041'}, {type: 'H3', typeSize: 'font-size: 12px; line-height: 15px;', text: 'This is a label or CTA text', typeStyle: 'font-weight: 700;font-size: 12px; line-height: 15px; color: #1F2041;'}, {type: 'body', typeSize: 'font-size: 14px;line-height: 24px;', text: 'This is the body text which is used for most of the design, like paragraphs, lists, etc.', typeStyle: 'font-weight: 400;font-size: 14px;line-height: 24px;color: rgba(31, 32, 65, 0.75)'}]
 include __colors-list/colorsType__colors-list
+include __type-list/colorsType__type-list
 block colorsType-container
     div.colorsType-container
         +colorsType__colors-list(colors)
+        +colorsType__type-list(types)

@@ -1,0 +1,7 @@
+mixin colorsType__type-list(types)
+    ul.colorsType__type-list
+        each item in types 
+            li
+                div.type-item   
+                    p.type-params(style=`${item.typeSize}`)=item.type
+                    p.type-text(style=`${item.typeStyle}`)=item.text
