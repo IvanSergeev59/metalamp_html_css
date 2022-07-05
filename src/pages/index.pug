@@ -1,13 +1,14 @@
 extends ../pug/layout
 
-
-block header&footer
+block mainPage
     section.headerFooter
         +logo-black-and-white
         +header(false)
         +header(true)
-        +footer
-block colors&type 
+        +footer 
     section.colorsType
         +logo-black-and-white
         include ../blocks/colorsType/colorsType
+    section.cards         
+        +logo-black-and-white
+        include ../blocks/cards/cards

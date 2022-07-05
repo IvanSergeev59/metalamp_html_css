@@ -1,6 +1,6 @@
 //- Buttons
 mixin btn(text="Button", cls="primary", type="button")
-    button.btn(type=`${type}` class=`btn-${cls}`)= text
+    button.btn(type=`${type}` class=`${cls}`)= text
 
 //- Group buttons
 mixin btn-group(values, cls)
