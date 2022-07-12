@@ -1,3 +1,8 @@
+- var searchRoomsOptions = {type:'search', class: 'searchRooms', h2: 'Найдём номера под ваши пожелания', buttonTxt: 'Подобрать номер', options:['Сколько гостей', '1', '2', '3', '4']};
+- var accountRegParams = {type: 'reg', class: 'accountRegistration', h2: 'Регистрация аккаунта', buttonTxt: 'Перейти к оплате'}
 block cards
-    div.searchRooms
-        +searchRooms
+    +logo-black-and-white
+    div.cards__containers
+        div.cards__container
+            +form(searchRoomsOptions)
+            +form(accountRegParams)

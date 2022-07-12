@@ -1,0 +1,59 @@
+mixin inputText(cls, heading, type, name, placeholder) 
+    p=`${heading}`
+    div(class=`input-text ${cls}`)
+        input( type=`${type}` name=`${name}` placeholder=`${placeholder}`)
+
+mixin radioInput(arr, radioName)
+    p 
+        div
+            input(type="radio" id="var1" name=`${radioName}` value=arr[1])
+            label(for="var1")=arr[1]
+            input(type="radio" id="var2" name=`${radioName}` value=arr[0] )
+            label(for="var2")=arr[0]
+
+mixin inputDate(arr) 
+    each item in arr
+        div
+            p=`${item.inputName}`
+            div(class=`input-date ${item.cls}`) 
+                input(type="date" name=`${item.name}`)
+
+mixin checkbox 
+    div.checkbox-container
+        label(class="checkbox")
+            input(type="checkbox") 
+            span(class="slider-checkbox round")
+        p Получать спецпредложения
+
+mixin signIn 
+    div.signIn
+        p Уже есть аккаунт на Toxin 
+        +btn('Войти','cards__button','')
+
+mixin form(params) 
+    div(class=`${params.class}`)
+        h2=`${params.h2}`
+        case params.type
+            when 'search'
+                form
+                    +inputDate([{inputName:'Прибытие', cls:"input-date", name:'arrive' }, {name: 'leave',inputName:'Выезд', cls:"input-date"}])
+                    p Гости
+                        select
+                            each item, index in params.options 
+                                if index==0
+                                    option(value='' disabled=true selected)=`${item}`
+                                else
+                                    option=item
+            when 'reg'
+                form
+                    div 
+                        +inputText('', '', 'text', 'name', 'Имя')                        
+                    div 
+                        +inputText('', '', 'text', 'surname', 'Фамилия')
+                    +radioInput(['Мужчина', 'Женщина'], 'sex')  
+                    +inputDate([{inputName: 'Дата рождения', cls:'', name: 'birthday'}])
+                    +inputText('', 'Данные для входа в сервис', 'email', 'email', 'Email')
+                    +inputText('', '', 'password', 'password', 'Пароль')
+                    +checkbox                    
+                    +btn(`${params.buttonTxt}`, 'cards__button', 'submit')
+                    +signIn

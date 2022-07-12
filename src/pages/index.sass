@@ -31,4 +31,114 @@ body
   background: white
   margin-top: 50px
 
+// default style for input date 
+.input-date
+  position: relative
+  margin-bottom: 5px
+  width: 150px  
+  input
+    padding: 0px
+    padding-left: 15px
+    height: 44px
+    font-family: 'Montserrat'
+    font-style: normal
+    font-weight: 400
+    font-size: 14px
+    text-transform: uppercase
+    line-height: 18px
+    width: 135px
+    border: 1px solid rgba(31, 32, 65, 0.25)
+    border-radius: 4px 
 
+.input-date::after
+  content: url('../images/1.png')
+  color: #bdbdbd
+  position: absolute            
+  height: 15px
+  display: flex
+  align-items: center
+  top: 0
+  bottom: 0
+  right: 6px
+  top: 50%
+  transform: translateY(-50%)   
+  width: 15px 
+
+.input-text    
+  width: 320px
+  height: 44px
+  margin-bottom: 10px
+  input
+    padding: 0px
+    padding-left: 15px
+    height: 44px
+    font-family: 'Montserrat'
+    font-style: normal
+    font-weight: 400
+    font-size: 14px
+    text-transform: uppercase
+    line-height: 18px
+    width: 305px
+    border: 1px solid rgba(31, 32, 65, 0.25)
+    border-radius: 4px 
+
+//default style for checkbox
+.checkbox-container
+  display: flex
+  flex-direction: row
+  p
+    margin: 0px
+    margin-left: 10px
+    height:24px
+    line-height: 1.2
+.checkbox
+  position: relative
+  display: inline-block
+  width: 40px
+  height: 20px
+  input
+    display: none
+.slider-checkbox
+  position: absolute
+  cursor: pointer
+  border-radius: 34px
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background-color: white
+  border: 1px solid rgba(31, 32, 65, 0.25) 
+  border-radius: 10px
+  -webkit-transition: .4s
+  transition: .4s
+.slider-checkbox:before 
+  position: absolute
+  border-radius: 50%
+  content: ""
+  height: 12px
+  width: 12px
+  left: 4px
+  bottom: 3px
+  background-color: rgba(31, 32, 65, 0.25)
+  -webkit-transition: .4s
+  transition: .4s
+
+input:focus + .slider-checkbox 
+  box-shadow: 0 0 1px #2196F3
+
+
+input:checked + .slider-checkbox:before 
+  -webkit-transform: translateX(18px)
+  -ms-transform: translateX(18px)
+  transform: translateX(18px)
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+
+.signIn
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  margin-top: 30px
+  padding-bottom: 30px
+  button
+    width: 99px
+    margin-top: 0px
