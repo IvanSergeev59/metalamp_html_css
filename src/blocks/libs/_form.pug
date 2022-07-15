@@ -13,7 +13,7 @@ mixin radioInput(arr, radioName)
 
 mixin inputDate(arr) 
     each item in arr
-        div
+        div.inputDate
             p=`${item.inputName}`
             div(class=`input-date ${item.cls}`) 
                 input(type="date" name=`${item.name}`)
@@ -25,25 +25,42 @@ mixin checkbox
             span(class="slider-checkbox round")
         p Получать спецпредложения
 
-mixin signIn 
+mixin signIn(txt, btnTxt) 
     div.signIn
-        p Уже есть аккаунт на Toxin 
-        +btn('Войти','cards__button','')
+        p=`${txt}` 
+        +btn(`${btnTxt}`,'cards__button','')
 
+mixin checkboxSelect(arr) 
+    p Гости
+        select
+            each item, index in arr 
+                if index==0
+                    option(value='' disabled=true selected)=`${item}`
+                else
+                    option=item
+mixin formHeader 
+    div.formHeader__header
+        p="№"
+            span.formHeader__header_h2="888"
+            span.formHeader__header_Room-type="люкс"
+        p="9 990₽ в сутки"
+    div.default__row-block     
+        +inputDate([{inputName:'Прибытие', cls:"input-date", name:'arrive' }, {name: 'leave',inputName:'Выезд', cls:"input-date"}])
+   
+mixin signIn-fields(text) 
+    +inputText('', text, 'email', 'email', 'Email')
+    +inputText('', '', 'password', 'password', 'Пароль')
+// different types of forms
 mixin form(params) 
     div(class=`${params.class}`)
-        h2=`${params.h2}`
+        if(params.h2)
+            h2=`${params.h2}`
         case params.type
             when 'search'
                 form
                     +inputDate([{inputName:'Прибытие', cls:"input-date", name:'arrive' }, {name: 'leave',inputName:'Выезд', cls:"input-date"}])
-                    p Гости
-                        select
-                            each item, index in params.options 
-                                if index==0
-                                    option(value='' disabled=true selected)=`${item}`
-                                else
-                                    option=item
+                    +checkboxSelect(params.options)
+                    +btn(`${params.buttonTxt } `, 'cards__button ', 'submit')
             when 'reg'
                 form
                     div 
@@ -52,8 +69,26 @@ mixin form(params)
                         +inputText('', '', 'text', 'surname', 'Фамилия')
                     +radioInput(['Мужчина', 'Женщина'], 'sex')  
                     +inputDate([{inputName: 'Дата рождения', cls:'', name: 'birthday'}])
-                    +inputText('', 'Данные для входа в сервис', 'email', 'email', 'Email')
-                    +inputText('', '', 'password', 'password', 'Пароль')
+                    +signIn-fields('Данные для входа в сервис')
                     +checkbox                    
                     +btn(`${params.buttonTxt}`, 'cards__button', 'submit')
-                    +signIn
+                    +signIn('Уже есть аккаунт на Toxin', 'Войти')
+
+            when 'toBookRoom'
+                form.toBookRoom
+                    +formHeader                    
+                    +checkboxSelect(params.options)
+                    each item in params.addParams
+                        div.default__row-block
+                            p.toBlockRoom__p=`${item.left}`
+                            p.toBlockRoom__p=`${item.right}`
+                    div.default__row-block
+                        p Итого
+                        p 38 081₽
+                    +btn(`${params.buttonTxt } `, 'cards__button cards__button_room-margin', 'submit')
+            when 'signIn-form'
+                form.signIn-form
+                    h2 Войти
+                    +signIn-fields('') 
+                    +btn(`${params.buttonTxt}`, 'cards__button', 'submit')
+                    +signIn('Нет аккаунта на Toxin?', 'Создать')

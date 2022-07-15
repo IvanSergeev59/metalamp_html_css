@@ -1,8 +1,13 @@
 - var searchRoomsOptions = {type:'search', class: 'searchRooms', h2: 'Найдём номера под ваши пожелания', buttonTxt: 'Подобрать номер', options:['Сколько гостей', '1', '2', '3', '4']};
 - var accountRegParams = {type: 'reg', class: 'accountRegistration', h2: 'Регистрация аккаунта', buttonTxt: 'Перейти к оплате'}
+- var bookingRoom = {type: 'toBookRoom', class:'bookingRoom', options:['Сколько гостей', '1', '2', '3', '4'], buttonTxt: 'Забронировать', addParams:[{left: '9 990₽ х 4 суток', right:'39 960₽'}, {left: 'Сбор за услуги: скидка 2 179₽', right:'0₽'}, {left: 'Сбор за дополнительные услуги', right:'300₽'}]}
+- var signIn = {type: 'signIn-form', buttonTxt: 'Войти'}
 block cards
     +logo-black-and-white
     div.cards__containers
         div.cards__container
             +form(searchRoomsOptions)
             +form(accountRegParams)
+        div.cards__container
+            +form(bookingRoom)
+            +form(signIn)
