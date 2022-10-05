@@ -1,0 +1,25 @@
+.colors-list__item {
+  width: auto;
+}
+
+.item-square {
+  width: 70px;
+  height: 70px;
+  margin-right: 40px;
+}
+
+.colorsType__colors-list li {
+  list-style: none;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  margin-bottom: 20px;
+  font-size: 19px;
+  line-height: 28px;
+  align-items: center;
+  font-weight: 700;
+  height: 70px;
+}
+.colorsType__colors-list li .item-non-bold {
+  font-weight: 400;
+}/*# sourceMappingURL=colorsType__colors-list.css.map */

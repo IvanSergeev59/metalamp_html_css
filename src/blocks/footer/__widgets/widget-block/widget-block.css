@@ -1,0 +1,28 @@
+.widget-block__logo {
+  width: 106.59px;
+  height: 40px;
+}
+
+.email-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  width: 260px;
+  height: 44px;
+  border-radius: 4px;
+}
+
+.input-form {
+  padding-left: 15px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.25);
+  border: 0px;
+}
+
+.email-form_img {
+  padding-right: 15px;
+  margin-top: 11px;
+  width: 22px;
+  height: 22px;
+}/*# sourceMappingURL=widget-block.css.map */

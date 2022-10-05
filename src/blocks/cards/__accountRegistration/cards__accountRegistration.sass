@@ -5,6 +5,8 @@
     background: white
     height: 646px
     margin-top: 40px
+    font-family: 'Montserrat'
+    font-style: normal
     h2
         font-family: 'Montserrat'
         font-style: normal
@@ -12,8 +14,34 @@
         font-size: 24px
         line-height: 29px
         color: #1F2041
-    // input
-    //     width: 320px
-    //     height: 44px
-    //     border: 1px solid rgba(31, 32, 65, 0.25)
-    //     border-radius: 4px
+    div
+        margin-top: 10px
+        label
+            margin-right: 20px
+    input[type='radio']
+        display: none
+    label:before
+        content: " "
+        display: inline-block
+        position: relative
+        top: 5px
+        margin: 0 10px 0 0px
+        width: 18.6px
+        height: 18.6px
+        border: 1px solid rgba(31, 32, 65, 0.25)
+        border-radius: 10px
+    
+    input[type='radio']:checked + label:before
+        content: " "
+        display: inline-block
+        position: relative
+        top: 5px
+        margin: 0 10px 0 0px
+        width: 12px
+        height: 12px
+        border: 4px solid white
+        border-radius: 50%
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+        box-shadow: 0 0 0 1px #BC9CFF
+            
+            

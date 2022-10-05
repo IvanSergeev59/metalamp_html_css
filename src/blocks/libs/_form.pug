@@ -6,7 +6,7 @@ mixin inputText(cls, heading, type, name, placeholder)
 mixin radioInput(arr, radioName)
     p 
         div
-            input(type="radio" id="var1" name=`${radioName}` value=arr[1])
+            input(type="radio" id="var1" name=`${radioName}` value=arr[1] checked)
             label(for="var1")=arr[1]
             input(type="radio" id="var2" name=`${radioName}` value=arr[0] )
             label(for="var2")=arr[0]
@@ -67,7 +67,7 @@ mixin form(params)
                         +inputText('', '', 'text', 'name', 'Имя')                        
                     div 
                         +inputText('', '', 'text', 'surname', 'Фамилия')
-                    +radioInput(['Мужчина', 'Женщина'], 'sex')  
+                    +radioInput(['Женщина', 'Мужчина'], 'sex')  
                     +inputDate([{inputName: 'Дата рождения', cls:'', name: 'birthday'}])
                     +signIn-fields('Данные для входа в сервис')
                     +checkbox                    

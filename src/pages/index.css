@@ -1,6 +1,11 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-VariableFont_wght.ttf");
+}
 body {
   margin: 0 auto;
   width: 100%;
+  max-width: 1440px;
   background: #E5E5E5;
 }
 
@@ -10,4 +15,211 @@ body {
   margin-left: 30px;
   margin-top: 30px;
   margin-bottom: 22px;
+}
+
+.logo {
+  width: 105.69 px;
+  height: 40px;
+}
+
+.social-block {
+  width: 112px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+}
+.social-block img {
+  width: 24px;
+  height: 24px;
+}
+
+.colorsType {
+  width: 100%;
+  background: white;
+  margin-top: 50px;
+}
+
+.input-date {
+  position: relative;
+  margin-bottom: 5px;
+  width: 150px;
+}
+.input-date input {
+  padding: 0px;
+  padding-left: 15px;
+  height: 44px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 18px;
+  width: 135px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+}
+
+.input-date::after {
+  content: url("../images/1.png");
+  color: #bdbdbd;
+  position: absolute;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+}
+
+.input-text {
+  width: 320px;
+  height: 44px;
+  margin-bottom: 10px;
+}
+.input-text input {
+  padding: 0px;
+  padding-left: 15px;
+  height: 44px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 18px;
+  width: 305px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+}
+
+.checkbox-container {
+  display: flex;
+  flex-direction: row;
+}
+.checkbox-container p {
+  margin: 0px;
+  margin-left: 10px;
+  height: 24px;
+  line-height: 1.2;
+}
+
+.checkbox {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+.checkbox input {
+  display: none;
+}
+
+.slider-checkbox {
+  position: absolute;
+  cursor: pointer;
+  border-radius: 34px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 10px;
+  transition: 0.4s;
+}
+
+.slider-checkbox:before {
+  position: absolute;
+  border-radius: 50%;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 4px;
+  bottom: 3px;
+  background-color: rgba(31, 32, 65, 0.25);
+  transition: 0.4s;
+}
+
+input:focus + .slider-checkbox {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider-checkbox:before {
+  transform: translateX(18px);
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+}
+
+.signIn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding-bottom: 30px;
+}
+.signIn button {
+  width: 99px;
+  margin-top: 0px;
+}
+.signIn p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  margin: auto;
+  margin-left: 0px;
+  text-transform: none;
+}
+
+.toBookRoom {
+  background: white;
+  width: 320px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 40px;
+  padding-bottom: 30px;
+}
+.toBookRoom .toBlockRoom__p {
+  color: rgba(31, 32, 65, 0.75);
+  font-weight: 400;
+  text-transform: none;
+  margin: 0px;
+}
+.toBookRoom .toBlockRoom__total {
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 23px;
+  color: #1F2041;
+}
+
+.formHeader__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.formHeader__header .formHeader__header_h2 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  margin-left: 5px;
+  color: #1F2041;
+}
+.formHeader__header .formHeader__header_Room-type {
+  color: #BC9CFF;
+  text-transform: uppercase;
+  margin-left: 8px;
+}
+
+.default__row-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.signIn-form {
+  background-color: white;
+  width: 320px;
+  margin-top: 40px;
+  padding: 40px 30px 32px 30px;
 }/*# sourceMappingURL=index.css.map */

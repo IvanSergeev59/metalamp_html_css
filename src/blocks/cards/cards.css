@@ -1,0 +1,165 @@
+.searchRooms {
+  background: white;
+  width: 320px;
+  padding-right: 30px;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  background: WHITE;
+  color: rgba(31, 32, 65, 0.75);
+}
+.searchRooms p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.searchRooms form {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.searchRooms h2 {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  text-transform: none;
+  color: #1F2041;
+}
+
+.accountRegistration {
+  width: 320px;
+  padding-right: 30px;
+  padding-left: 30px;
+  background: white;
+  height: 646px;
+  margin-top: 40px;
+  font-family: "Montserrat";
+  font-style: normal;
+}
+.accountRegistration h2 {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #1F2041;
+}
+.accountRegistration div {
+  margin-top: 10px;
+}
+.accountRegistration div label {
+  margin-right: 20px;
+}
+.accountRegistration input[type=radio] {
+  display: none;
+}
+.accountRegistration label:before {
+  content: " ";
+  display: inline-block;
+  position: relative;
+  top: 2.5px;
+  margin: 0 10px 0 0px;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #BC9CFF;
+  border-radius: 10px;
+}
+.accountRegistration input[type=radio]:checked + label:before {
+  content: " ";
+  display: inline-block;
+  position: relative;
+  top: 2.5px;
+  margin: 0 10px 0 0px;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #BC9CFF;
+  border-radius: 10px;
+  background: red;
+}
+
+.cards {
+  width: 1440px;
+  background: #F4F4F6;
+}
+.cards p {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+  margin: 0px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.cards select {
+  width: 320px;
+  margin-top: 5px;
+  background: white;
+  height: 44px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(31, 32, 65, 0.75);
+  padding-left: 15px;
+}
+
+.cards__containers {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.cards__container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 380px;
+}
+
+.cards__button {
+  height: 44px;
+  margin-top: 31px;
+  width: 320px;
+  padding: 0px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #BC9CFF;
+  border: solid 2px transparent;
+  background-image: linear-gradient(white, white), linear-gradient(#BC9CFF, #8BA4F9);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  border-radius: 20px;
+}
+
+.cards__button:hover {
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  color: white;
+}
+
+.cards__button:after {
+  content: url("../../images/arrow_forward_white.png");
+  width: 44px;
+  height: 44px;
+  position: absolute;
+  right: 25px;
+}
+
+.cards__button_room-margin {
+  margin-top: 21px;
+}/*# sourceMappingURL=cards.css.map */

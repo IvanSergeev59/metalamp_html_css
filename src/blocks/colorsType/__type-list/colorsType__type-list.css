@@ -1,0 +1,25 @@
+.colorsType__type-list {
+  width: auto;
+}
+.colorsType__type-list li {
+  list-style: none;
+  margin-bottom: 51px;
+}
+.colorsType__type-list .type-item {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+}
+.colorsType__type-list .type-item .type-text {
+  max-width: 369px;
+  margin-left: 30px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.colorsType__type-list .type-item .type-params {
+  text-align: right;
+  min-width: 37px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: rgba(31, 32, 65, 0.25);
+}/*# sourceMappingURL=colorsType__type-list.css.map */
